@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import bars from './Images/menu1.svg';
-import logo from './Images/logo.png';
+import bars from '../../assets/images/menu1.svg';
+import logo from '../../assets/images/logo.png';
 import './Header.css';
 
 
@@ -44,11 +44,11 @@ const Header = () => {
           }}>
               <a href="/#App">App</a>
             </li>
-            <li onClick={() => {
+            {/* <li onClick={() => {
               setIsNavExpanded(!isNavExpanded);
             }}>
               <a href="/#Donate">Donate</a>
-            </li>
+            </li> */}
             <li onClick={() => {
             setIsNavExpanded(!isNavExpanded);
           }}>
