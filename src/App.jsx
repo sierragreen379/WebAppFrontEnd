@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./sections/Header/Header.jsx"
+import Header from "./sections/Header/Header"
 import PhoneDemo from "./sections/phone-demo/PhoneDemo";
 import Contact from "./sections/Contact/Contact";
 import Contributors from "./sections/Contributors/Contributors";

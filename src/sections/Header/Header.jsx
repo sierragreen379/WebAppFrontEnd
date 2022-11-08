@@ -9,13 +9,13 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
-import MenuIcon from '@mui/icons-material/Menu';
+import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 const drawerWidth = 240;
-const navItems = ['About', 'App', 'Contact', 'Team'];
+const navItems = ['About', 'App', 'Contact', 'Team', 'Download App'];
 
 function DrawerAppBar(props) {
     const { window } = props;
@@ -26,9 +26,9 @@ function DrawerAppBar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: '#ffc529', backgroundColor: '#232323' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                HotSoup
             </Typography>
             <Divider />
             <List>
@@ -47,7 +47,7 @@ function DrawerAppBar(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav">
+            <AppBar component="nav" sx={{backgroundColor: '#232323'}}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -56,12 +56,12 @@ function DrawerAppBar(props) {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
-                        <MenuIcon />
+                        <MenuRoundedIcon sx={{ fontSize: '50px', color: '#ffc529' }} />
                     </IconButton>
                     <Typography
                         variant="h6"
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Inder' } }}
+                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Inder', color: '#ffc529' } }}
                     >
                         HotSoup
                     </Typography>
