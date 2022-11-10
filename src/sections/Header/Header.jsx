@@ -13,7 +13,8 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import Logo from '../../assets/images/HotSoupLogo.png'
+import Logo from '../../assets/images/HotSoupLogo.png';
+import "../../global.css";
 
 const drawerWidth = 240;
 const navItems = ['About', 'App', 'Contact', 'Team'];
@@ -27,7 +28,7 @@ function DrawerAppBar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: '#ffc529', backgroundColor: '#232323' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: 'var(--primaryYellow)', backgroundColor: 'var(--mainBackground)' }}>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 1.5 }}>
                 <Box component={"img"} sx={{ height: 33, width: 61, paddingTop: 2.6 }} alt="HotSoup Logo" src={Logo} />
                 <Typography variant="h4" sx={{ my: 2, fontFamily: "Inder" }}>
@@ -39,11 +40,11 @@ function DrawerAppBar(props) {
                 {navItems.map((item) => (
                     <ListItem key={item} disablePadding>
                         <ListItemButton sx={{ textAlign: 'center' }}>
-                            <ListItemText primaryTypographyProps={{ fontSize: 20}} primary={item} />
+                            <ListItemText primaryTypographyProps={{ fontSize: 20, fontFamily: "Inder" }} primary={item} />
                         </ListItemButton>
                     </ListItem>
                 ))}
-                <Button variant={'contained'} size={'large'} sx={{ backgroundColor: '#ffc529', color: '#232323', borderRadius: 20, lineHeight: 1, width: '80%', paddingBlock: 0.5, marginBlock: 1, fontSize: 24, fontWeight: 700 }}>
+                <Button variant={'contained'} size={'large'} sx={{ backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, lineHeight: 1, width: '80%', paddingBlock: 0.5, marginBlock: 1, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
                     DOWNLOAD APP
                 </Button>
             </List>
@@ -54,7 +55,7 @@ function DrawerAppBar(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" sx={{ backgroundColor: '#232323' }}>
+            <AppBar component="nav" sx={{ backgroundColor: 'var(--mainBackground)', paddingInline: 3, paddingBlock: 2 }}>
                 <Toolbar>
                     <IconButton
                         color="inherit"
@@ -63,27 +64,27 @@ function DrawerAppBar(props) {
                         onClick={handleDrawerToggle}
                         sx={{ mr: 2, display: { sm: 'none' } }}
                     >
-                        <MenuRoundedIcon sx={{ fontSize: '50px', color: '#ffc529' }} />
+                        <MenuRoundedIcon sx={{ fontSize: '50px', color: 'var(--primaryYellow)' }} />
                     </IconButton>
-                    <Box sx={{ display: 'flex', justifyContent: 'flex-end'}}>
-                        <Box component={"div"} sx={{ flexGrow: 1, display: "flex", justifyContent: "center", gap: 1.7 }}>
+                    <Box sx={{ width: 1, display: 'flex', alignItems: 'center' }}>
+                        <Box component={"div"} sx={{ width: 300, display: "flex", justifyContent: "center", gap: 1.7 }}>
                             <Box component={"img"} sx={{ display: { xs: 'none', sm: 'block' }, height: 33, width: 61, paddingTop: 0.5 }} alt="HotSoup Logo" src={Logo} />
                             <Typography
                                 variant="h4"
                                 component="div"
-                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Inder', color: '#ffc529' } }}
+                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Inder', color: 'var(--primaryYellow)' } }}
                                 >
                                 HotSoup
                             </Typography>
                         </Box>
-                        <Box sx={{ display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
+                        <Box sx={{ flexGrow: 1, width: 626, display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
                             {navItems.map((item) => (
-                                <Button key={item} sx={{ color: '#ffc529', fontSize: 20 }}>
+                                <Button key={item} sx={{ color: 'var(--primaryYellow)', fontFamily: "Inder", fontSize: 20, fontWeight: 700, marginInline: 1 }}>
                                     {item}
                                 </Button>
                             ))}
                         </Box>
-                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor: '#ffc529', color: '#232323', borderRadius: 20, lineHeight: 1, width: 300, paddingBlock: 0.5, fontSize: 24, fontWeight: 700, marginInlineStart: 2, flexShrink: 1 }}>
+                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, width: 300, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
                             DOWNLOAD APP
                         </Button>
                     </Box>
