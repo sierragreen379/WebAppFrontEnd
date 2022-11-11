@@ -12,7 +12,9 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import { Container } from '@mui/material';
 import Logo from '../../assets/images/HotSoupLogo.png';
+import ServingFoodImage from '../../assets/images/ServingFood.png';
 import '../../global.css';
 
 const drawerWidth = 240;
@@ -105,6 +107,26 @@ function DrawerAppBar(props) {
                 >
                     {drawer}
                 </Drawer>
+            </Box>
+            <Box component="main" sx={{ p: 3 }}>
+                <Toolbar />
+                <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", p: 3, position: "absolute" }}>
+                    <Typography variant='h4' sx={{ color: "var(--primaryYellow)"}}>
+                        Hunger hurts.
+                    </Typography>
+                    <Typography variant='h6' sx={{ color: "var(--white)" }}>
+                        Let's get you something to eat. Don't worry, we get it. Now, go eat!
+                    </Typography>
+                    <Box sx={{ display: 'flex' }}>
+                        <Button>App Store Placeholder</Button>
+                        <Button>Google Play Placeholder</Button>
+                    </Box>
+                </Box>
+                <Box sx={{ backgroundColor: "var(--primaryYellow)", opacity: 0.5, height: 330, width: 80, borderBottomRightRadius: 20, borderTopRightRadius: 20, position: "absolute" }} />
+                {/* <Container> */}
+                    <Box sx={{ backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1020, height: 670, position: "absolute" }} />
+                    <Box component={"img"} sx={{ borderRadius: 10, width: 1020, height: 670 }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
+                {/* </Container> */}
             </Box>
         </Box>
     );
