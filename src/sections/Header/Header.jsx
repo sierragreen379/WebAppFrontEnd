@@ -1,5 +1,4 @@
 import * as React from 'react';
-// import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Divider from '@mui/material/Divider';
@@ -14,7 +13,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import Logo from '../../assets/images/HotSoupLogo.png';
-import "../../global.css";
+import '../../global.css';
 
 const drawerWidth = 240;
 const navItems = ['About', 'App', 'Contact', 'Team'];
@@ -84,7 +83,7 @@ function DrawerAppBar(props) {
                                 </Button>
                             ))}
                         </Box>
-                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, width: 300, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
+                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, width: 300, lineHeight: 1, paddingBlock: 0.5, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
                             DOWNLOAD APP
                         </Button>
                     </Box>
@@ -97,7 +96,7 @@ function DrawerAppBar(props) {
                     open={mobileOpen}
                     onClose={handleDrawerToggle}
                     ModalProps={{
-                        keepMounted: true, // Better open performance on mobile.
+                        keepMounted: true,
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
