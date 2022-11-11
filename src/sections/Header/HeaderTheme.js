@@ -4,7 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import Header from "./HeaderTheme";
+import Header from "./Header";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
