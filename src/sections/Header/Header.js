@@ -12,7 +12,6 @@ import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Container } from '@mui/material';
 import Logo from '../../assets/images/HotSoupLogo.png';
 import ServingFoodImage from '../../assets/images/ServingFood.png';
 import '../../global.css';
@@ -29,7 +28,7 @@ function DrawerAppBar(props) {
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: 'var(--primaryYellow)', backgroundColor: 'var(--mainBackground)' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center', color: 'var(--primaryYellow)' }}>
             <Box sx={{ display: "flex", justifyContent: "center", gap: 1.5 }}>
                 <Box component={"img"} sx={{ height: 33, width: 61, paddingTop: 2.6 }} alt="HotSoup Logo" src={Logo} />
                 <Typography variant="h4" sx={{ my: 2, fontFamily: "Inder" }}>
@@ -102,31 +101,30 @@ function DrawerAppBar(props) {
                     }}
                     sx={{
                         display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'var(--mainBackground)' },
                     }}
                 >
                     {drawer}
                 </Drawer>
             </Box>
-            <Box component="main" sx={{ p: 3 }}>
-                <Toolbar />
-                <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", p: 3, position: "absolute" }}>
-                    <Typography variant='h4' sx={{ color: "var(--primaryYellow)"}}>
-                        Hunger hurts.
-                    </Typography>
-                    <Typography variant='h6' sx={{ color: "var(--white)" }}>
-                        Let's get you something to eat. Don't worry, we get it. Now, go eat!
-                    </Typography>
-                    <Box sx={{ display: 'flex' }}>
-                        <Button>App Store Placeholder</Button>
-                        <Button>Google Play Placeholder</Button>
+            <Box component="main" sx={{ display: "flex", justifyContent: "center", paddingTop: 12, width: 1 }}>
+                <Box sx={{ display: "flex", justifyContent: "center", width: 0.8, maxWidth: 1020, position: "relative" }}>
+                    <Box sx={{ zIndex: -1, backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1020, height: 670, position: "absolute" }} />
+                    <Box component={"img"} sx={{ zIndex: -2, borderRadius: 10, width: 1020, height: 670 }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
+                    <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", p: 3, position: "absolute", left: 1, top: 205, width: 480, height: 254 }}>
+                        <Typography variant='h4' sx={{ fontFamily: "Inder", color: "var(--primaryYellow)"}}>
+                            Hunger hurts.
+                        </Typography>
+                        <Typography variant='h6' sx={{ fontFamily: "Inder", color: "var(--white)" }}>
+                            Let's get you something to<br/>eat. Don't worry, we get it.<br/>Now, go eat!
+                        </Typography>
+                        <Box sx={{ display: 'flex' }}>
+                            <Button>App Store</Button>
+                            <Button>Google Play</Button>
+                        </Box>
                     </Box>
+                    <Box sx={{ zIndex: -3, backgroundColor: "var(--primaryYellow)", opacity: 0.5, boxShadow: 1, height: 330, width: 80, borderBottomRightRadius: 20, borderTopRightRadius: 20, position: "absolute", top: 290, right: -50 }} />
                 </Box>
-                <Box sx={{ backgroundColor: "var(--primaryYellow)", opacity: 0.5, height: 330, width: 80, borderBottomRightRadius: 20, borderTopRightRadius: 20, position: "absolute" }} />
-                {/* <Container> */}
-                    <Box sx={{ backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1020, height: 670, position: "absolute" }} />
-                    <Box component={"img"} sx={{ borderRadius: 10, width: 1020, height: 670 }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
-                {/* </Container> */}
             </Box>
         </Box>
     );
