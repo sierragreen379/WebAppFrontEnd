@@ -62,29 +62,29 @@ function DrawerAppBar(props) {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { sm: 'none' } }}
+                        sx={{ mr: 2, display: { md: 'none' } }}
                     >
                         <MenuRoundedIcon sx={{ fontSize: '50px', color: 'var(--primaryYellow)' }} />
                     </IconButton>
                     <Box sx={{ width: 1, display: 'flex', alignItems: 'center' }}>
                         <Box component={"div"} sx={{ width: 300, display: "flex", justifyContent: "center", gap: 1.7 }}>
-                            <Box component={"img"} sx={{ display: { xs: 'none', sm: 'block' }, height: 33, width: 61, paddingTop: 0.5 }} alt="HotSoup Logo" src={Logo} />
+                            <Box component={"img"} sx={{ display: { xs: 'block', sm: 'block', md: 950 }, height: 33, width: 61, paddingTop: 0.5 }} alt="HotSoup Logo" src={Logo} />
                             <Typography
                                 variant="h4"
                                 component="div"
-                                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block', fontFamily: 'Inder', color: 'var(--primaryYellow)' } }}
+                                sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block', fontFamily: 'Inder', color: 'var(--primaryYellow)' } }}
                                 >
                                 HotSoup
                             </Typography>
                         </Box>
-                        <Box sx={{ flexGrow: 1, width: 626, display: { xs: 'none', sm: 'block' }, textAlign: 'center' }}>
+                        <Box sx={{ flexGrow: 1, width: 626, display: { xs: 'none', sm: 'none', md: 'block' }, textAlign: 'center' }}>
                             {navItems.map((item) => (
                                 <Button key={item} sx={{ color: 'var(--primaryYellow)', fontFamily: "Inder", fontSize: 20, fontWeight: 700, marginInline: 1 }}>
                                     {item}
                                 </Button>
                             ))}
                         </Box>
-                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'block' }, backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, width: 300, lineHeight: 1, paddingBlock: 0.5, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
+                        <Button variant={'contained'} size={'large'} sx={{ display: { xs: 'none', sm: 'none', md: 'block' }, backgroundColor: 'var(--primaryYellow)', ':hover': { bgcolor: 'var(--secondayYellow)' }, color: 'var(--mainBackground)', borderRadius: 20, width: 300, lineHeight: 1, paddingBlock: 0.5, fontFamily: "Inder", fontSize: 24, fontWeight: 700 }}>
                             DOWNLOAD APP
                         </Button>
                     </Box>
@@ -100,7 +100,7 @@ function DrawerAppBar(props) {
                         keepMounted: true,
                     }}
                     sx={{
-                        display: { xs: 'block', sm: 'none' },
+                        display: { sm: 'block', md: 'none' },
                         '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor: 'var(--mainBackground)' },
                     }}
                 >
