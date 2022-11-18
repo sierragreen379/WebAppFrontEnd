@@ -16,7 +16,7 @@ import Logo from '../../assets/images/HotSoupLogo.png';
 import ServingFoodImage from '../../assets/images/ServingFood.png';
 import '../../global.css';
 
-const drawerWidth = 240;
+const drawerWidth = 250;
 const navItems = ['About', 'App', 'Contact', 'Team'];
 
 function DrawerAppBar(props) {
@@ -55,24 +55,15 @@ function DrawerAppBar(props) {
 
     return (
         <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" sx={{ backgroundColor: 'var(--mainBackground)', paddingInline: 3, paddingBlock: 2 }}>
+            <AppBar component="nav" sx={{ backgroundColor: 'var(--mainBackground)', paddingInline: 1, paddingBlock: 2 }}>
                 <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { md: 'none' } }}
-                    >
-                        <MenuRoundedIcon sx={{ fontSize: '50px', color: 'var(--primaryYellow)' }} />
-                    </IconButton>
                     <Box sx={{ width: 1, display: 'flex', alignItems: 'center' }}>
                         <Box component={"div"} sx={{ width: 300, display: "flex", justifyContent: "center", gap: 1.7 }}>
-                            <Box component={"img"} sx={{ display: { xs: 'block', sm: 'block', md: 950 }, height: 33, width: 61, paddingTop: 0.5 }} alt="HotSoup Logo" src={Logo} />
+                            <Box component={"img"} sx={{ height: 33, width: 61, paddingTop: 0.5 }} alt="HotSoup Logo" src={Logo} />
                             <Typography
                                 variant="h4"
                                 component="div"
-                                sx={{ flexGrow: 1, display: { xs: 'block', sm: 'block', fontFamily: 'Inder', color: 'var(--primaryYellow)' } }}
+                                sx={{ flexGrow: 1, fontFamily: 'Inder', color: 'var(--primaryYellow)' }}
                                 >
                                 HotSoup
                             </Typography>
@@ -88,6 +79,14 @@ function DrawerAppBar(props) {
                             DOWNLOAD APP
                         </Button>
                     </Box>
+                    <IconButton
+                        color="inherit"
+                        aria-label="open drawer"
+                        onClick={handleDrawerToggle}
+                        sx={{ display: { md: 'none' } }}
+                    >
+                        <MenuRoundedIcon sx={{ fontSize: '50px', color: 'var(--primaryYellow)' }} />
+                    </IconButton>
                 </Toolbar>
             </AppBar>
             <Box component="nav">
@@ -108,9 +107,9 @@ function DrawerAppBar(props) {
                 </Drawer>
             </Box>
             <Box component="main" sx={{ display: "flex", justifyContent: "center", paddingTop: 12, width: 1 }}>
-                <Box sx={{ display: "flex", justifyContent: "center", width: 0.8, maxWidth: 1020, position: "relative" }}>
+                <Box sx={{ display: "flex", justifyContent: "center", width: 0.9, maxWidth: 1020, position: "relative", overflow: "hidden", border: 2, borderColor: "red" }}>
                     <Box sx={{ zIndex: -1, backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1020, height: 670, position: "absolute" }} />
-                    <Box component={"img"} sx={{ zIndex: -2, borderRadius: 10, width: 1020, height: 670 }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
+                    <Box component={"img"} sx={{ zIndex: -2, borderRadius: 10, width: "auto", height: "auto" }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
                     <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", p: 3, position: "absolute", left: 1, top: 205, width: 480, height: 254 }}>
                         <Typography variant='h4' sx={{ fontFamily: "Inder", color: "var(--primaryYellow)"}}>
                             Hunger hurts.
