@@ -107,22 +107,22 @@ function DrawerAppBar(props) {
                 </Drawer>
             </Box>
             <Box component="main" sx={{ display: "flex", justifyContent: "center", paddingTop: 12, width: 1 }}>
-                <Box sx={{ display: "flex", justifyContent: "center", width: 0.9, maxWidth: 1020, position: "relative", overflow: "hidden", border: 2, borderColor: "red" }}>
-                    <Box sx={{ zIndex: -1, backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1020, height: 670, position: "absolute" }} />
-                    <Box component={"img"} sx={{ zIndex: -2, borderRadius: 10, width: "auto", height: "auto" }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
-                    <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", p: 3, position: "absolute", left: 1, top: 205, width: 480, height: 254 }}>
+                <Box sx={{ width: 1, maxWidth: 1065, height: 670, position: "relative", overflow: "hidden", borderRadius: 10 }}>
+                    <Box sx={{ zIndex: -1, backgroundColor: "var(--mainBackground)", opacity: 0.5, borderRadius: 10, width: 1, height: 670, position: "absolute", right: 45 }} />
+                    <Box component={"img"} sx={{ zIndex: -2, width: 1, height: 670, borderRadius: 10, position: "absolute", right: 45, objectFit: "cover" }} alt="Hands serving a hot meal" src={ ServingFoodImage } />
+                    <Box sx={{ backgroundColor: "rgba(56, 56, 56, 0.6)", display: "flex", flexDirection: "column", justifyContent: "center", position: "absolute", left: 0, top: 205, height: 254, pl: "9vw", pr: "7vw" }}>
                         <Typography variant='h4' sx={{ fontFamily: "Inder", color: "var(--primaryYellow)"}}>
                             Hunger hurts.
                         </Typography>
-                        <Typography variant='h6' sx={{ fontFamily: "Inder", color: "var(--white)" }}>
+                        <Typography variant='h6' sx={{ fontFamily: "Inder", color: "var(--white)", lineHeight: "25px" }}>
                             Let's get you something to<br/>eat. Don't worry, we get it.<br/>Now, go eat!
                         </Typography>
-                        <Box sx={{ display: 'flex' }}>
+                        {/* <Box sx={{ display: 'flex' }}>
                             <Button>App Store</Button>
                             <Button>Google Play</Button>
-                        </Box>
+                        </Box> */}
                     </Box>
-                    <Box sx={{ zIndex: -3, backgroundColor: "var(--primaryYellow)", opacity: 0.5, boxShadow: 1, height: 330, width: 80, borderBottomRightRadius: 20, borderTopRightRadius: 20, position: "absolute", top: 290, right: -50 }} />
+                    <Box sx={{ zIndex: -3, backgroundColor: "var(--primaryYellow)", opacity: 0.5, boxShadow: 1, height: 330, width: 80, borderBottomRightRadius: 20, borderTopRightRadius: 20, position: "absolute", bottom: 47, right: 0 }} />
                 </Box>
             </Box>
         </Box>
